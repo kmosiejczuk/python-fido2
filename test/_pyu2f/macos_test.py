@@ -16,7 +16,10 @@
 
 import ctypes
 import sys
-import mock
+try:
+    from unittest import mock
+except (ImportError, AttributeError):
+    import mock
 
 from fido2._pyu2f import macos
 

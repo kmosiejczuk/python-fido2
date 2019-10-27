@@ -20,7 +20,10 @@ import sys
 
 import six
 from six.moves import builtins
-from mock import patch
+try:
+    from unittest.mock import patch
+except (ImportError, AttributeError):
+    from mock import patch
 
 if sys.platform.startswith('freebsd'):
     from fido2._pyu2f import freebsd

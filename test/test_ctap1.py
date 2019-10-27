@@ -30,7 +30,10 @@ from __future__ import absolute_import, unicode_literals
 from fido2.ctap1 import CTAP1, ApduError
 from binascii import a2b_hex
 import unittest
-import mock
+try:
+    from unittest import mock
+except (ImportError, AttributeError):
+    import mock
 
 
 class TestCTAP1(unittest.TestCase):

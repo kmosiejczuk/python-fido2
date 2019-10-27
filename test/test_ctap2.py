@@ -44,7 +44,10 @@ from cryptography.hazmat.backends import default_backend
 from cryptography.hazmat.primitives.asymmetric import ec
 
 import unittest
-import mock
+try:
+    from unittest import mock
+except (ImportError, AttributeError):
+    import mock
 
 _AAGUID = a2b_hex("F8A011F38C0A4D15800617111F9EDC7D")
 _INFO = a2b_hex(

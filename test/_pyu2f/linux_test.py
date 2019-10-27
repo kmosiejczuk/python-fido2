@@ -18,7 +18,10 @@ import base64
 import os
 import sys
 
-import mock
+try:
+    from unittest import mock
+except (ImportError, AttributeError):
+    import mock
 
 import six
 from six.moves import builtins

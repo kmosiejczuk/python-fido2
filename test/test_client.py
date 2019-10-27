@@ -29,7 +29,10 @@
 
 from __future__ import absolute_import, unicode_literals
 
-import mock
+try:
+    from unittest import mock
+except (ImportError, AttributeError):
+    import mock
 import unittest
 from threading import Event
 from binascii import a2b_hex

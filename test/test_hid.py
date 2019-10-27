@@ -30,7 +30,10 @@ from __future__ import absolute_import, unicode_literals
 from fido2.ctap import CtapError
 from fido2.hid import CtapHidDevice
 import unittest
-import mock
+try:
+    from unittest import mock
+except (ImportError, AttributeError):
+    import mock
 
 
 class HidTest(unittest.TestCase):
